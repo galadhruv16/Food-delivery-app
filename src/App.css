@@ -1,0 +1,20 @@
+.logo {
+  width: 100px;
+  cursor: pointer;
+}
+.navbuttons {
+  display: flex;
+
+}
+.navbuttons >li{
+  list-style-type: none;
+  padding: 10px;
+  margin: 10px;
+  
+  cursor: pointer;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  
+}
