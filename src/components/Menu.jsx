@@ -7,7 +7,7 @@ function Menu() {
   useEffect(() => {
     fetchData();
   }, []);
-
+  const [search, setSearch] = useState("");
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.07480&lng=72.88560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -23,7 +23,26 @@ function Menu() {
   }
   return (
     <div>
-      <div className="search">Search</div>
+      <div className="search">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button
+          onClick={() => {
+            const filteredList = resData.filter((restaurant) =>
+              restaurant.info.name
+                .toLowerCase()
+                .includes(search.toLocaleLowerCase())
+            );
+            console.log(filteredList);
+            setResData(filteredList);
+          }}
+        >
+          Search
+        </button>
+      </div>
       <div className="filter-bttn">
         <button
           className="top-rated"
