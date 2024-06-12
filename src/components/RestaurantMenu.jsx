@@ -48,20 +48,19 @@ const RestaurantMenu = () => {
   return (
     <div>
       <h1>{name}</h1>
-      <h2>{cuisines.join(", ")}</h2>
-      <h2>{locality}</h2>
-      <h2>{avgRating}</h2>
-      <h2>{costForTwo / 100} for two</h2>
-      <h2>{totalRatingsString}</h2>
-      <h1>Menu</h1>
-        {newMenu.map((res) => {
-            return (
-            <div>
-                <h3>{res.name}: Rs.{res.price / 100}</h3>
-                
-            </div>
-            );
-        })}
+      <h3>{cuisines.join(", ")}</h3>
+      <h3>{locality}</h3>
+      <h3>{avgRating}</h3>
+      <h3>{costForTwo / 100} for two</h3>
+      <h3>{totalRatingsString}</h3>
+      <h2>Menu</h2>
+      {newMenu.map((res) => {
+        return (
+          <li key={res.id}>
+            {res.name}: Rs.{res.price / 100}
+          </li>
+        );
+      })}
     </div>
   );
 };
