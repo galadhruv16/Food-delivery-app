@@ -28,7 +28,8 @@
   background-color: lightgrey;
 }
 .top-rated {
-  background-color: gray;
+
+  padding-left: 5px;
 }
 .cardbody {
   display: flex;
@@ -57,6 +58,29 @@
 .food {
   width: 100%;
   height: 40%;
+}
+.shimmersearchfilter {
+  display: flex;
+  padding: 10px;
+}
+.mainsearchbtn {
+  padding-left: 2px;
+  padding-right: 5px;
+}
+/* .top-rated{
+  padding-left: 5px;
+
+} */
+.mainsearchfilter {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.shimmersearchicon {
+  padding-left: 2px;
+}
+.shimmertopbtn {
+  padding-left: 5px;
 }
 .shimmer-cont {
   display: flex;
