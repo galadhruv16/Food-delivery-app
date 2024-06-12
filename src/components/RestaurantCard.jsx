@@ -19,7 +19,7 @@ function RestaurantCard(props) {
       <h3>{name}</h3>
       <h3>{cuisines.join(", ")}</h3>
       <h3>{avgRatingString}</h3>
-      <h3>{costForTwo} for two</h3>
+      <h3>{costForTwo}</h3>
       <h3>{slaString}</h3>
 
       {/* <button>Add to cart</button> */}

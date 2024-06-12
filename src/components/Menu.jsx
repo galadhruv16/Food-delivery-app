@@ -17,6 +17,7 @@ function Menu() {
     setResData(
       res.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(res.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
   if (resData.length === 0) {
     return <Shimmer />;
@@ -53,11 +54,11 @@ function Menu() {
         </button>
       </div>
       <div className="filter-bttn">
-        <button 
+        <button
           className="top-rated"
           onClick={() => {
             const filteredList = resData.filter(
-              (restaurant) => restaurant.info.avgRating > 4.5
+              (restaurant) => restaurant.info.avgRating > 4.0
             );
             console.log(filteredList);
             setResData(filteredList);
