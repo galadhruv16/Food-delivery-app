@@ -8,27 +8,35 @@ import { useState, useEffect } from "react";
 import { search_icon } from "../utils/SVGicons";
 function Menu() {
   const [resData, setResData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [allResData, setAllResData] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
   const [search, setSearch] = useState("");
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2010502&lng=72.97853529999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const res = await data.json();
-    console.log(res);
-
-    setResData(
-      res.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    console.log(
-      res.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2010502&lng=72.97853529999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const res = await response.json();
+      console.log(res);
+      const restaurants =
+        res.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants || [];
+      setResData(restaurants);
+      setAllResData(restaurants);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
-  if (resData.length === 0) {
+  if (isLoading) {
     return <Shimmer />;
   }
+
   return (
     <div className="cardbg">
       <div className="mainsearchfilter">
