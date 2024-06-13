@@ -9,7 +9,7 @@ import { cart_icon } from "../utils/SVGicons";
 function Head() {
   const [login, setLogin] = useState("Login");
   return (
-    <div>
+    <div className="iskostickkar">
       <div className="app">
         <header className="App-header">
           <nav className="navbar">

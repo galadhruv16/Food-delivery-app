@@ -158,16 +158,16 @@
   flex-direction: column;
   /* align-items: center; */
 }
-.menuLi{
+.menuLi {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  padding:20px 10px;
-  margin:20px 100px;
+  padding: 20px 10px;
+  margin: 20px 100px;
   cursor: pointer;
   border: 1px solid black;
   border-radius: 5px;
-  transition:all 0.1s ease;
+  transition: all 0.1s ease;
   margin-right: 100px;
 }
 .menuLi:hover {
@@ -178,7 +178,11 @@
   transform: scale(1.1);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
-.menuLiTitle{
+.menuLiTitle {
   display: flex;
   justify-content: center;
 }
+/* .iskostickkar {
+  position: sticky;
+  top: 0;
+} */
