@@ -46,21 +46,35 @@ const RestaurantMenu = () => {
   });
   console.log(newMenu);
   return (
-    <div>
-      <h1>{name}</h1>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{locality}</h3>
-      <h3>{avgRating}</h3>
-      <h3>{costForTwo / 100} for two</h3>
-      <h3>{totalRatingsString}</h3>
-      <h2>Menu</h2>
-      {newMenu.map((res) => {
-        return (
-          <li key={res.id}>
-            {res.name}: Rs.{res.price / 100}
-          </li>
-        );
-      })}
+    <div className="mainResMenu">
+      <div className="restHeader">
+        <div className="nameCard">
+          <div className="restName">
+            <h2>{name}</h2>
+          </div>
+          <div className="restCuisines">
+            <h3>{cuisines.join(", ")}</h3>
+          </div>
+        </div>
+        <div className="rateCard">
+          <h3 className="restLocality">{locality}</h3>
+          <h3 className="restAvgRating">{avgRating}</h3>
+          <h3 className="restTotalRating">{totalRatingsString}</h3>
+        </div>
+      </div>
+      <div className="menuLiTitle">
+        <h2>Recommendations</h2>
+      </div>
+      <div className="menuItems">
+        {newMenu.map((res) => {
+          return (
+            <li key={res.id} className="menuLi">
+              {res.name}:{" "}
+              <span className="menuLiPrice">Rs.{res.price / 100}</span>
+            </li>
+          );
+        })}
+      </div>
     </div>
   );
 };

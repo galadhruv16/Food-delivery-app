@@ -2,7 +2,8 @@
 const About = () => {
   return (
     <div>
-      <h2>About us page hai</h2> 
+      <h2>About The Creator Of this page</h2> 
+      
     </div>
   )
 }

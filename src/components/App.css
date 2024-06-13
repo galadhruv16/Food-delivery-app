@@ -28,7 +28,6 @@
   background-color: lightgrey;
 }
 .top-rated {
-
   padding-left: 5px;
 }
 .cardbody {
@@ -47,12 +46,15 @@
   cursor: pointer;
   border: 1px solid black;
   border-radius: 5px;
+  transform: scale(1.1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 .cardTile {
   width: 220px;
   padding: 5px;
   background-color: lightgray;
   height: auto;
+  transition: all 0.1s ease;
   cursor: pointer;
 }
 .food {
@@ -101,4 +103,82 @@
 .login {
   padding: 10px 25px;
   background-color: lightgray;
+}
+.restCard {
+  color: black;
+  text-decoration: none;
+}
+.restHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px 600px;
+}
+/* .restName {
+  padding: 5px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+} */
+.restName {
+  margin: auto;
+  padding: 0px 50px;
+}
+.restCuisines {
+  padding: 0px 50px;
+  margin: auto;
+}
+.restLocality {
+  padding: 5px;
+  margin: auto;
+}
+.restAvgRating {
+  padding: 5px;
+  margin: auto;
+}
+.restTotalRating {
+  padding: 5px;
+  margin: auto;
+}
+.nameCard {
+  display: flex;
+  flex-direction: column;
+}
+.rateCard {
+  display: flex;
+}
+.mainResMenu {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.menuLi{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding:20px 10px;
+  margin:20px 100px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition:all 0.1s ease;
+  margin-right: 100px;
+}
+.menuLi:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  transform: scale(1.1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+.menuLiTitle{
+  display: flex;
+  justify-content: center;
 }

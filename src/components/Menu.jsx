@@ -23,7 +23,7 @@ function Menu() {
       const res = await response.json();
       console.log(res);
       const restaurants =
-        res.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        res.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || [];
       setResData(restaurants);
       setAllResData(restaurants);
@@ -79,7 +79,7 @@ function Menu() {
       </div>
       <div className="cardbody">
         {resData.map((restaurant) => (
-          <Link to={/restaurant/ + restaurant.info.id}>
+          <Link to={/restaurant/ + restaurant.info.id} key= {restaurant.info.id} className="restCard" >
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
           </Link>
         ))}
