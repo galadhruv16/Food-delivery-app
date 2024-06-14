@@ -38,7 +38,7 @@ function Menu() {
   }
 
   return (
-    <div className="cardbg bg-blue-300 items-center" >
+    <div className="cardbg items-center" >
       <div className="mainsearchfilter flex pt-4 mx-60 pl-44 items-center">
         <span className="search ">
           <input className="border-solid border-black border-2 m-2  "

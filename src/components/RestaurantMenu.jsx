@@ -47,9 +47,9 @@ const RestaurantMenu = () => {
   console.log(newMenu);
   return (
     <div>
-      <div className="mainResMenu bg-blue-300 ">
+      <div className="mainResMenu  ">
         <div className="restHeader  ">
-          <div className="p-8 mx-[540px] rounded-2xl bg-blue-300 text-center border-solid border-black border-2">
+          <div className="p-8 mx-[540px] rounded-2xl  text-center border-solid border-black border-2">
             <div className="restName">
               <h2 className="font-bold text-2xl">{name}</h2>
             </div>

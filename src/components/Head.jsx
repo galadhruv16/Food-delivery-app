@@ -11,9 +11,9 @@ function Head() {
   return (
     <div className="iskostickkar">
       <div className="app">
-        <header className="">
+        <header className="shadow-lg">
           <nav className=" ">
-            <div className="flex justify-between bg-orange-600">
+            <div className="flex justify-between bg-orange-100 shadow-2lg">
               <Link to="/">
                 <img className="logo w-40" src={LOGO_URL} />
               </Link>
