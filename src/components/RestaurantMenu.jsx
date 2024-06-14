@@ -46,34 +46,44 @@ const RestaurantMenu = () => {
   });
   console.log(newMenu);
   return (
-    <div className="mainResMenu">
-      <div className="restHeader">
-        <div className="nameCard">
-          <div className="restName">
-            <h2>{name}</h2>
-          </div>
-          <div className="restCuisines">
-            <h3>{cuisines.join(", ")}</h3>
+    <div>
+      <div className="mainResMenu bg-blue-300 ">
+        <div className="restHeader  ">
+          <div className="p-8 mx-[540px] rounded-2xl bg-blue-300 text-center border-solid border-black border-2">
+            <div className="restName">
+              <h2 className="font-bold text-2xl">{name}</h2>
+            </div>
+            <div className="restCuisines font-semibold text-lg">
+              <h3>{cuisines.join(", ")}</h3>
+            </div>
+
+            <div className="rateCard ">
+              <h3 className="restLocality">{locality}</h3>
+              <h3 className="restAvgRating bg-green-500 mx-16 rounded-2xl">
+                {avgRating}
+              </h3>
+              <h3 className="restTotalRating">{totalRatingsString}</h3>
+            </div>
           </div>
         </div>
-        <div className="rateCard">
-          <h3 className="restLocality">{locality}</h3>
-          <h3 className="restAvgRating">{avgRating}</h3>
-          <h3 className="restTotalRating">{totalRatingsString}</h3>
+        <div className="menuLiTitle font-bold text-2xl text-center mt-8">
+          <h2>Recommendations</h2>
         </div>
-      </div>
-      <div className="menuLiTitle">
-        <h2>Recommendations</h2>
-      </div>
-      <div className="menuItems">
-        {newMenu.map((res) => {
-          return (
-            <li key={res.id} className="menuLi">
-              {res.name}:{" "}
-              <span className="menuLiPrice">Rs.{res.price / 100}</span>
-            </li>
-          );
-        })}
+        <div className="menuItems my-4 ">
+          {newMenu.map((res) => {
+            return (
+              <li
+                key={res.id}
+                className="menuLi  font-bold px-12 mx-28 my-4 rounded-xl p-5 flex justify-between list-none border-solid border-black border-2 transition ease-in-out delay-1 hover:hover:-translate-y-1 hover:scale-110 hover:border-solid hover:border-2 hover:border-black"
+              >
+                {res.name}:{" "}
+                <span className="menuLiPrice bg-yellow-300 rounded-2xl p-2">
+                  Rs.{res.price / 100}
+                </span>
+              </li>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

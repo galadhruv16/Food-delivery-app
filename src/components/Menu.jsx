@@ -38,16 +38,16 @@ function Menu() {
   }
 
   return (
-    <div className="cardbg">
-      <div className="mainsearchfilter">
-        <span className="search">
-          <input
+    <div className="cardbg bg-blue-300 items-center" >
+      <div className="mainsearchfilter flex pt-4 mx-60 pl-44 items-center">
+        <span className="search ">
+          <input className="border-solid border-black border-2 m-2  "
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <span className="mainsearchbtn">
-            <button
+          <span className="mainsearchbtn bg-white p-2 font-bold rounded-lg">
+            <button className=""
               onClick={() => {
                 const filteredList = resData.filter((restaurant) =>
                   restaurant.info.name
@@ -58,13 +58,13 @@ function Menu() {
                 setResData(filteredList);
               }}
             >
-              {search_icon}
+              SEARCH
             </button>
           </span>
         </span>
         <div className="filter-bttn">
           <button
-            className="top-rated"
+            className="top-rated bg-gray-400 mx-2 p-2 rounded-xl font-bold align-middle hover:bg-gray-500"
             onClick={() => {
               const filteredList = resData.filter(
                 (restaurant) => restaurant.info.avgRating > 4.0
@@ -77,7 +77,7 @@ function Menu() {
           </button>
         </div>
       </div>
-      <div className="cardbody">
+      <div className="cardbody flex flex-wrap ">
         {resData.map((restaurant) => (
           <Link to={/restaurant/ + restaurant.info.id} key= {restaurant.info.id} className="restCard" >
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
